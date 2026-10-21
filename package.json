@@ -4,13 +4,25 @@
   "private": true,
   "description": "Deterministic headless physics for agent-built chain-reaction machines (Ring the Bell, The Tune Machine).",
   "type": "module",
-  "exports": { ".": "./src/index.js" },
-  "bin": { "goldberg-sim": "bin/sim.js" },
-  "engines": { "node": ">=20" },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "goldberg-sim": "bin/sim.js",
+    "goldberg-reel": "bin/reel.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node --test test/",
     "sim": "node bin/sim.js",
-    "record": "node scripts/record.js"
+    "reel": "node bin/reel.js",
+    "record": "node scripts/record.js",
+    "docs": "node bin/schema-doc.js --write"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
 }

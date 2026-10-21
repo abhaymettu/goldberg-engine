@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>goldberg-engine replay</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; background: #0b0d12; height: 100%; }
+  body { display: grid; place-items: center; font: 14px/1.4 ui-sans-serif, system-ui, sans-serif; color: #c9ced8; }
+  canvas { width: min(100vw, 177.78vh); aspect-ratio: 16 / 9; display: block; }
+  #drop { position: fixed; inset: auto 0 12px 0; text-align: center; opacity: .6; }
+  body.recording #drop { display: none; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<div id="drop">Open with <code>?reel=path/to/reel.json</code> or drop a reel or replay JSON here. Space pauses.</div>
+<script type="module">
+  import { Player } from "./player.js";
+  const params = new URLSearchParams(location.search);
+  const player = new Player(document.getElementById("c"));
+  window.reel = player;
+  if (params.has("record")) document.body.classList.add("recording");
+  const start = (obj) => { player.load(obj); if (!params.has("record")) player.play(); };
+  if (params.get("reel")) fetch(params.get("reel")).then((r) => r.json()).then(start);
+  addEventListener("dragover", (e) => e.preventDefault());
+  addEventListener("drop", async (e) => { e.preventDefault(); start(JSON.parse(await e.dataTransfer.files[0].text())); });
+  addEventListener("keydown", (e) => { if (e.code === "Space") player.toggle(); });
+</script>
+</body>
+</html>

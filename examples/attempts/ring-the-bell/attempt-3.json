@@ -1,0 +1,104 @@
+{
+  "schema": "goldberg-level/1",
+  "name": "ring-the-bell attempt 3",
+  "notes": "Hand-made attempt for the example reel, not agent output.",
+  "world": {
+    "width": 20,
+    "height": 12,
+    "duration": 8
+  },
+  "goal": {
+    "event": "bell-rung",
+    "part": "bell"
+  },
+  "parts": [
+    {
+      "id": "floor",
+      "type": "floor"
+    },
+    {
+      "id": "ball",
+      "type": "ball",
+      "x": 1.0,
+      "y": 10.6
+    },
+    {
+      "id": "ramp1",
+      "type": "ramp",
+      "from": [
+        0.5,
+        10.3
+      ],
+      "to": [
+        5.0,
+        8.6
+      ]
+    },
+    {
+      "id": "lever",
+      "type": "lever",
+      "x": 6.6,
+      "y": 7.6,
+      "length": 2.4,
+      "angle": 8,
+      "limits": [
+        -25,
+        25
+      ]
+    },
+    {
+      "id": "ramp2",
+      "type": "ramp",
+      "from": [
+        7.4,
+        5.6
+      ],
+      "to": [
+        11.0,
+        4.0
+      ]
+    },
+    {
+      "id": "shelf",
+      "type": "ramp",
+      "from": [
+        11.0,
+        4.0
+      ],
+      "to": [
+        15.6,
+        4.0
+      ]
+    },
+    {
+      "id": "d1",
+      "type": "domino",
+      "x": 12.2,
+      "y": 4.0,
+      "height": 1.1,
+      "width": 0.12
+    },
+    {
+      "id": "d2",
+      "type": "domino",
+      "x": 12.8,
+      "y": 4.0,
+      "height": 1.1,
+      "width": 0.12
+    },
+    {
+      "id": "d3",
+      "type": "domino",
+      "x": 13.4,
+      "y": 4.0,
+      "height": 1.1,
+      "width": 0.12
+    },
+    {
+      "id": "bell",
+      "type": "bell",
+      "x": 14.15,
+      "y": 4.35
+    }
+  ]
+}

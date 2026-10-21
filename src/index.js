@@ -2,6 +2,7 @@ export { simulate, LevelError } from "./simulate.js";
 export { validateLevel, PART_SPECS, WORLD_SPEC, GOAL_SPEC } from "./schema.js";
 export { parsePitch } from "./pitch.js";
 export { makeRng } from "./rng.js";
+export { buildReel } from "./reel.js";
 
 /** Note onsets from a trace, in time order: what The Tune Machine scores against its tune. */
 export function onsets(trace) {

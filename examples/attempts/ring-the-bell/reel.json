@@ -1,0 +1,19 @@
+{
+  "title": "ring-the-bell (example reel)",
+  "goalText": "goal: ring the bell",
+  "provenance": "Hand-made example. The attempts and notes were written by a person to exercise the renderer; no agent produced them.",
+  "attempts": [
+    {
+      "level": "attempt-1.json",
+      "note": "bell is past the last domino's reach"
+    },
+    {
+      "level": "attempt-2.json",
+      "note": "dominoes too far apart, the chain stops"
+    },
+    {
+      "level": "attempt-3.json",
+      "note": "pull the bell in and close the gaps"
+    }
+  ]
+}

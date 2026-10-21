@@ -22,7 +22,7 @@ You describe a machine as JSON, the engine runs it headless in Node with a fixed
 - `examples/levels/tune-four-notes.json`: bar hits at 1.133333, 1.633333, 2.133333 and 2.633333 s (C5 E5 G5 C6, exactly 0.5 s apart).
 - Example reel (`examples/attempts/ring-the-bell/`): attempts 1 and 2 fail, attempt 3 rings the bell. Recorded clip: 1280x720, 60 fps, 11.97 s, H.264 plus AAC, about 3 s to render on an M-series Mac.
 - In the recorded tune clip, the audio onsets land at 2.733, 3.233, 3.733 and 4.233 s: the 1.6 s intro plus each logged hit time.
-- `npm test`: 30 tests, all passing.
+- `npm test`: 32 tests, all passing.
 
 ## Not built
 
@@ -65,4 +65,4 @@ onsets(trace); // bar hits in time order: [{ t, step, bar, by, pitch, midi, freq
 
 ## Vendored code
 
-`vendor/planck/` is [planck.js](https://github.com/piqnt/planck.js) 1.5.1, MIT licensed. The files are unmodified copies from the npm tarball, with the license and a SHA-256 of each file; see `vendor/planck/VENDORED.md`.
+`vendor/planck/` is [planck.js](https://github.com/piqnt/planck.js) 1.5.1, MIT licensed. The files are unmodified copies from the npm tarball, with the license. `vendor/planck/SHA256` holds the SHA-256 of all three files (check with `shasum -a 256 -c vendor/planck/SHA256`); see `vendor/planck/VENDORED.md`.

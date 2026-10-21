@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // goldberg-sim <level.json> [--seed N] [--out replay.json] [--events]
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { dirname } from "node:path";
 import { simulate, LevelError } from "../src/index.js";
 
 const args = process.argv.slice(2);
@@ -12,7 +13,7 @@ try {
   const level = JSON.parse(readFileSync(file, "utf8"));
   const out = opt("--out");
   const { trace, replay } = simulate(level, { seed: Number(opt("--seed") ?? 1), frames: Boolean(out) });
-  if (out) writeFileSync(out, JSON.stringify(replay));
+  if (out) { mkdirSync(dirname(out), { recursive: true }); writeFileSync(out, JSON.stringify(replay)); }
   const summary = { level: trace.level, seed: trace.seed, goal: trace.goal, counts: trace.counts, rest: trace.rest };
   if (args.includes("--events")) summary.events = trace.events.filter((e) => e.type !== "contact" || args.includes("--contacts"));
   console.log(JSON.stringify(summary, null, 2));

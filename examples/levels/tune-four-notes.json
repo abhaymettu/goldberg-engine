@@ -1,0 +1,96 @@
+{
+  "schema": "goldberg-level/1",
+  "name": "tune-four-notes",
+  "notes": "Hand-built example: four one-marble hoppers open half a second apart, and each marble strikes a tilted bar (C5, E5, G5, C6) on its way down. It is not agent-made and not tuned to a score.",
+  "world": {
+    "width": 20,
+    "height": 12,
+    "duration": 5
+  },
+  "parts": [
+    {
+      "id": "floor",
+      "type": "floor"
+    },
+    {
+      "id": "h1",
+      "type": "hopper",
+      "x": 3,
+      "y": 10,
+      "marbles": 1,
+      "gate": [
+        {
+          "open": 0.25
+        }
+      ]
+    },
+    {
+      "id": "h2",
+      "type": "hopper",
+      "x": 6,
+      "y": 10,
+      "marbles": 1,
+      "gate": [
+        {
+          "open": 0.75
+        }
+      ]
+    },
+    {
+      "id": "h3",
+      "type": "hopper",
+      "x": 9,
+      "y": 10,
+      "marbles": 1,
+      "gate": [
+        {
+          "open": 1.25
+        }
+      ]
+    },
+    {
+      "id": "h4",
+      "type": "hopper",
+      "x": 12,
+      "y": 10,
+      "marbles": 1,
+      "gate": [
+        {
+          "open": 1.75
+        }
+      ]
+    },
+    {
+      "id": "barC5",
+      "type": "bar",
+      "x": 3.1,
+      "y": 6.0,
+      "pitch": "C5",
+      "angle": -20
+    },
+    {
+      "id": "barE5",
+      "type": "bar",
+      "x": 6.1,
+      "y": 6.0,
+      "pitch": "E5",
+      "angle": -20
+    },
+    {
+      "id": "barG5",
+      "type": "bar",
+      "x": 9.1,
+      "y": 6.0,
+      "pitch": "G5",
+      "angle": -20
+    },
+    {
+      "id": "barC6",
+      "type": "bar",
+      "x": 12.1,
+      "y": 6.0,
+      "pitch": "C6",
+      "angle": -20
+    }
+  ]
+}

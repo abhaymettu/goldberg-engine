@@ -1,0 +1,16 @@
+{
+  "name": "goldberg-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic headless physics for agent-built chain-reaction machines (Ring the Bell, The Tune Machine).",
+  "type": "module",
+  "exports": { ".": "./src/index.js" },
+  "bin": { "goldberg-sim": "bin/sim.js" },
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test test/",
+    "sim": "node bin/sim.js",
+    "record": "node scripts/record.js"
+  },
+  "license": "MIT"
+}
